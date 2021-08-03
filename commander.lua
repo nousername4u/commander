@@ -1144,7 +1144,7 @@ notify("TP and Sprint Has been Added", "Check Your Inventory...")
 end
 end
 
- if string.sub(msg, 1, 3) == ":wl" then
+ if string.sub(msg, 1, 3) == ".wl" then
   if wluser == nil then
    wluser = string.sub(msg, 5)
    whitelist(msg)
