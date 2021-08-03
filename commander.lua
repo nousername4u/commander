@@ -1,8 +1,24 @@
-system("[System]: Welcome ".. game.Players.LocalPlayer.Name .. "!")
-wait(1)
-system("[System]: Thank you for using Commander,")
-wait(0.5)
-system("[System]: Enjoy!")
+bc = BrickColor.new("White")
+game.StarterGui:SetCore("ChatMakeSystemMessage", {
+	Text = "{System} Welcome ".. game.Players.LocalPlayer.Name .. "!";
+	Font = Enum.Font.SourceSans;
+	Color = bc.Color;
+	FontSize = Enum.FontSize.Size96;	
+})
+wait(2)
+game.StarterGui:SetCore("ChatMakeSystemMessage", {
+	Text = "{System} Thank you for using Commander";
+	Font = Enum.Font.SourceSans;
+	Color = bc.Color;
+	FontSize = Enum.FontSize.Size96;	
+})
+wait(1.5)
+game.StarterGui:SetCore("ChatMakeSystemMessage", {
+    Text = "{System} Enjoy!";
+	Font = Enum.Font.SourceSans;
+	Color = bc.Color;
+	FontSize = Enum.FontSize.Size96;	
+})
 
 -- Functions
 
@@ -1182,7 +1198,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
 end
 end
 
-if string.sub(msg, 1, 6) == ":house" then
+if string.sub(msg, 1, 6) == ".house" then
 if string.sub(msg, 8, 9) == "me" or string.sub(msg, 8, 8) == "" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-23.4106693, 8.22999954, 63.2581749))
 elseif string.sub(msg, 8, 10) == "all" then
