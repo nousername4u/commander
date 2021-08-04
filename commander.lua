@@ -1,24 +1,43 @@
-bc = BrickColor.new("White")
+local function system(text)
 game.StarterGui:SetCore("ChatMakeSystemMessage", {
-	Text = "{System} Welcome ".. game.Players.LocalPlayer.Name .. "!";
-	Font = Enum.Font.SourceSans;
-	Color = bc.Color;
-	FontSize = Enum.FontSize.Size96;	
+	Text = text;
+	Font = Enum.Font.SourceSansLight;
+	Color = Color3.new(255, 255, 255);
+	FontSize = Enum.FontSize.Size8;
 })
-wait(2)
-game.StarterGui:SetCore("ChatMakeSystemMessage", {
-	Text = "{System} Thank you for using Commander";
-	Font = Enum.Font.SourceSans;
-	Color = bc.Color;
-	FontSize = Enum.FontSize.Size96;	
-})
+end
+
+system("Welcome, " .. game.Players.LocalPlayer.Name .. "!")
+Wait(2)
+system("Thank you for using Commander!")
 wait(1.5)
-game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = "{System} Enjoy!";
-	Font = Enum.Font.SourceSans;
-	Color = bc.Color;
-	FontSize = Enum.FontSize.Size96;	
-})
+system("Enjoy!")
+
+-- Variables
+
+local abc = 0 -- Wait Time of Spam
+local lol = 0 -- If command being spammed will be displayed
+local amn = 1 -- amount of gear given
+local nopunish = false
+local healauto = false
+local noexp = false
+local nokill = false
+local noblind = false
+local nojail = false
+local nomusic = false
+local nodog = false
+local nosmoke = false
+local noswag = false
+local nosparkles = false
+local nofire = false
+local nospeed = false
+local noskydive = false
+local nocrash = false
+local noice = false
+local noseizure = false
+local noff = false
+local nomsgcrash = false
+local ilight = false
 
 -- Functions
 
@@ -645,7 +664,7 @@ if string.sub(msg, 11, 12) == "me" or string.sub(msg, 11, 11) == "" then
 game:GetService'Players':Chat((".kit bomb "..wluser))
 elseif string.sub(msg, 11, 16) ~= "others" then
 local plrname = string.sub(msg, 10)
-game:GetService'Players':Chat((":kit bomb "..plrname))
+game:GetService'Players':Chat((".kit bomb "..plrname))
 end
 end
 
@@ -869,12 +888,12 @@ elseif string.sub(msg, 1, 9) == "hkycmd3 =" then
  keyycmd3 = string.sub(msg, 11)
  
 end
-	
-	if string.sub(msg, 1, 7) == ":wait =" then
+
+	if string.sub(msg, 1, 7) == ".wait =" then
 		abc = time
 	end
 
-if string.sub(msg, 1, 9) == ":amount =" then
+if string.sub(msg, 1, 9) == ".amount =" then
 amn = string.sub(msg, 11)
 end
 	
@@ -886,7 +905,7 @@ lol = 1
 end
 -- Kit Commands
 	
-if string.sub(msg, 1, 9) == ":kit omni" then
+if string.sub(msg, 1, 9) == ".kit omni" then
 
 local plrname = string.sub(msg, 11)
 
@@ -943,13 +962,13 @@ if string.sub(msg, 1, 8) == ".kit gun" then
 
 local plrname = string.sub(msg, 10)
 
-game:GetService'Players':Chat(("gear "..plrname.." 00000000000000000094233344"))
-game:GetService'Players':Chat(("gear "..plrname.." 00000000000000000094233286"))
-game:GetService'Players':Chat(("gear "..plrname.." 00000000000000000095354288"))
-game:GetService'Players':Chat(("gear "..plrname.." 00000000000000000097885552"))
-game:GetService'Players':Chat(("gear "..plrname.." 000000000000000000116693764"))
-game:GetService'Players':Chat(("gear "..plrname.." 00000000000000000097885508"))
-game:GetService'Players':Chat(("gear "..plrname.." 000000000000000000130113146"))
+game:GetService'Players':Chat(("gear me 00000000000000009423334"))
+game:GetService'Players':Chat(("gear me 0000000000000000094233286"))
+game:GetService'Players':Chat(("gear me 00000000000000000095354288"))
+game:GetService'Players':Chat(("gear me 00000000000000000097885552"))
+game:GetService'Players':Chat(("gear me 00000000000000000116693764"))
+game:GetService'Players':Chat(("gear me 00000000000000000097885508"))
+game:GetService'Players':Chat(("gear me 000000000000000000130113146"))
 
 end
 
@@ -1151,7 +1170,7 @@ end
   end
  end
 
- if string.sub(msg, 1, 5) == ":unwl" then
+ if string.sub(msg, 1, 5) == ".unwl" then
   if wluser ~= nil then
    system(wluser .. " is no longer Whitelisted!")
    wluser = nil
@@ -1217,7 +1236,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
 end
 end
 
-if string.sub(msg, 1, 7) == ":uhouse" then
+if string.sub(msg, 1, 7) == ".uhouse" then
 if string.sub(msg, 9, 10) == "me" or string.sub(msg, 9, 9) == "" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-29.954174, 41.8300018, 60.291275))
 elseif string.sub(msg, 9, 11) == "all" then
@@ -1236,7 +1255,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
 end
 end
 
-if string.sub(msg, 1, 5) == ":obby" then
+if string.sub(msg, 1, 5) == ".obby" then
 if string.sub(msg, 7, 8) == "me" or string.sub(msg, 7, 7) == "" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-52.2587738, 3.70000005, 38.5809517))
 elseif string.sub(msg, 7, 9) == "all" then
@@ -1255,7 +1274,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
 end
 end
 
-if string.sub(msg, 1, 7) == ":blocks" or string.sub(msg, 1, 7) == ":bricks" then
+if string.sub(msg, 1, 7) == ".blocks" or string.sub(msg, 1, 7) == ".bricks" then
 if string.sub(msg, 9, 10) == "me" or string.sub(msg, 9, 9) == "" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-74.0005112, 12.1000004, 6.67828035))
 elseif string.sub(msg, 9, 11) == "all" then
@@ -1275,43 +1294,79 @@ end
 
 -- Emote Commands
 
-if msg == ":hmm" then
+if msg == ".hmm" then
 hmmm()
 end
-if msg == ":headtoss" then
+if msg == ".headtoss" then
 headthrow()
 end
-if msg == ":armspin" then
+if msg == ".armspin" then
 armturbine()
 end
-if msg == ":loophead" then
+if msg == ".loophead" then
 loopheadd()
 end
-if msg == ":scream" then
+if msg == ".scream" then
 screamm()
 end
-if msg == ":headraise" then
+if msg == ".headraise" then
 raisehead()
 end
-if msg == ":dab" then
+if msg == ".dab" then
 dabb()
 end
-if msg == ":crawl" then
+if msg == ".crawl" then
 laydown()
 end
-if msg == ":crouch" then
+if msg == ".crouch" then
 crouchh()
 end
-if msg == ":dance" then
+if msg == ".dance" then
 MovingDance()
 end
 
 -- Music Commands
 
-if msg == "play mwd" then
-game:GetService'Players':Chat(("h Playing Miss Wanna Die"))
+if msg == ".play up next" then
+game:GetService'Players':Chat(("h Playing Up Next - YNY Sebi. Audio Uploaded by EwManuuu"))
 wait(0.125)
-game:GetService'Players':Chat(("music 0000000000000000003118721479"))
+game:GetService'Players':Chat(("music 0000000000000000005236675592"))
+end
+
+if msg == ".play pl" then
+game:GetService'Players':Chat(("h Playing pl. Audio Uploaded by Ludendorff"))
+wait(0.125)
+game:GetService'Players':Chat(("music 000000000000000000185563848"))
+end
+
+if msg == ".play running oof" then
+game:GetService'Players':Chat(("h Playing Running Oofs. Audio Uploaded by Ceyvel"))
+wait(0.125)
+game:GetService'Players':Chat(("music 0000000000000000001051512943"))
+end
+
+if msg == ".play bad influence" then
+game:GetService'Players':Chat(("h Playing Bad Influence. Audio Uploaded by RealTheVictor"))
+wait(0.125)
+game:GetService'Players':Chat(("music 0000000000000000006185032358"))
+end
+
+if msg == ".play macaroni" then
+game:GetService'Players':Chat(("h Playing hi fish stick i am macaroni cheese. Audio uploaded by RealTheVictor"))
+wait(0.125)
+game:GetService'Players':chat(("music 0000000000000000005552441101"))
+end
+
+if msg == ".play ear break" then
+game:GetService'Players':Chat(("h Playing Jazz hands ear break. Audio uploaded by RealTheVictor"))
+wait(0.125)
+game:GetService'Players':chat(("music 0000000000000000006738590191"))
+end
+
+if msg == ".play roses remix" then
+game:GetService'Players':Chat(("h Playing Roses Rain Remix. Audio uploaded by RealTheVictor"))
+wait(0.125)
+game:GetService'Players':chat(("music 0000000000000000006507105692"))
 end
 
 -- Morph Commands
@@ -1360,7 +1415,7 @@ game:GetService'Players':Chat(("gear me 000000000000000000120749528"))
 game:GetService'Players':Chat(("gear me 000000000000000000746687364"))
 end
 
-if msg == ".joy" or msg == ".Joy" then
+if msg == ":joy" or msg == ".Joy" then
           game:GetService'Players':Chat(("removehats me"))
       game:GetService'Players':Chat(("paint me white"))
       game:GetService'Players':Chat(("hat me 4904151381"))
@@ -1455,7 +1510,7 @@ if string.sub(msg, 1, 5) == ".swap" then
   game:GetService'Players':Chat(("vis me"))
 end
 
-if string.sub(msg, 1, 8) == ".swap me" then
+if string.sub(msg, 1, 8) == ";swap me" then
  local plyr1 = string.sub(msg, 10)
  local myloc1 = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
   game:GetService'Players':Chat(("invis me"))
@@ -1490,7 +1545,7 @@ local plrname = string.sub(msg, 8)
 game:GetService'Players':Chat(("fling "..plrname))
 end
 
-if msg == ".sky" then
+if msg == ".skyboombox" then
 game:GetService'Players':Chat(("gear me 212641536"))
 wait(0.125)
 game:GetService'Players':Chat(("fly me"))
@@ -1551,7 +1606,7 @@ game:GetService'Players':Chat(("punish me"))
 wait(1.25) 
 game:GetService'Players':Chat(("unpunish me"))
 end
-if string.sub(msg, 1, 6) == ".regen" then
+if string.sub(msg, 1, 6) == ":regen" then
 regen()
 end
 	
@@ -1590,7 +1645,7 @@ if msg == ".ls" then
 game:GetService'Players':Chat(("logs"))
 end
 
-if msg == ".ms" then
+if msg == ".logs" then
 local rlog = math.random(1,5)
 
 if rlog == 1 then
@@ -1914,7 +1969,7 @@ end
   game:GetService'Players':Chat((".spam.pads"))
  end
 
-if msg == ".random" then
+if msg == ";random" then
  local xvalue = math.random(-495,495)
  local zvalue = math.random(-495,495)
  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(xvalue, 3, zvalue))
@@ -1955,76 +2010,6 @@ end
 if msg == ".allanti" then
 multianti = true
 ultanti(msg)
-end
-
-if msg == ".alldefault" then
-nopunish = true
-healauto = true
-noexp = true
-nokill = false
-noblind = true
-nojail = true
-nomusic = false
-nodog = true
-nosmoke = true
-noswag = true
-nosparkles = false
-nofire = true
-nospeed = false
-noskydive = true
-nocrash = true
-noice = true
-noseizure = true
-noff = false
-nomsgcrash = false
-ilight = true
-end
-
-if msg == ".enableall" then
-nopunish = true
-healauto = true
-noexp = true
-nokill = true
-noblind = true
-nojail = true
-nomusic = true
-nodog = true
-nosmoke = true
-noswag = true
-nosparkles = true
-nofire = true
-nospeed = true
-noskydive = true
-nocrash = true
-noice = true
-noseizure = true
-noff = true
-nomsgcrash = true
-ilight = true
-end
-
-
-if msg == ".disableall" then
-nopunish = false
-healauto = false
-noexp = false
-nokill = false
-noblind = false
-nojail = false
-nomusic = false
-nodog = false
-nosmoke = false
-noswag = false
-nosparkles = false
-nofire = false
-nospeed = false
-noskydive = false
-nocrash = false
-noice = false
-noseizure = false
-noff = false
-nomsgcrash = false
-ilight = false
 end
 
 if msg == ".disablekill" then
@@ -2091,10 +2076,6 @@ if msg == ".disablemsgcrash" then
 nomsgcrash = false
 end
 
-if msg == ".disablenolight" then
-ilight = false
-end
-
 if msg == ".enablekill" then
 nokill = true
 end
@@ -2159,10 +2140,6 @@ if msg == ".enablemsgcrash" then
 nomsgcrash = true
 end
 
-if msg == ".enablenolight" then
-ilight = true
-end
-
 if msg == ".allpads" then
 local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
 
@@ -2177,14 +2154,4 @@ pad:SetPrimaryPartCFrame(pos)
 pad.PrimaryPart.CanCollide = true
 end
 end
-
 end)
-
-local function system(text)
-game.StarterGui:SetCore("ChatMakeSystemMessage", {
-	Text = text;
-	Font = Enum.Font.SourceSansLight;
-	Color = Color3.new(255, 255, 255);
-	FontSize = Enum.FontSize.Size8;
-})
-end
