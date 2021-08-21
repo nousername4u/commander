@@ -1,4 +1,3 @@
--- Chat
 local function system(text)
 game.StarterGui:SetCore("ChatMakeSystemMessage", {
 	Text = text;
