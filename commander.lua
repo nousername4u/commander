@@ -8,15 +8,6 @@ game.StarterGui:SetCore("ChatMakeSystemMessage", {
 })
 end
 
--- Notifications
-local function notify(title, text)
-	    game:GetService("StarterGui"):SetCore("SendNotification", {
-	        Title = title;
-	        Text = text;
-	        Duration = 1;
-	    })
-end
-
 system("Welcome, " .. game.Players.LocalPlayer.Name .. "!")
 Wait(2)
 system("Thank you for using Commander!")
@@ -1112,7 +1103,15 @@ end
 -- Teleport Commands
 
 if msg == "clicktp" then
-
+-- Notifications
+local function notify(title, text)
+	    game:GetService("StarterGui"):SetCore("SendNotification", {
+	        Title = title;
+	        Text = text;
+	        Duration = 1;
+	    })
+end
+			
 -- Tool-Check
 local Check = game.Players.LocalPlayer.Backpack:FindFirstChild("Sprint")
 local Check2 = game.Players.LocalPlayer.Character:FindFirstChild("Sprint")
