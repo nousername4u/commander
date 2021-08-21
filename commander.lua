@@ -2569,13 +2569,12 @@ game:GetService'Players':Chat(("clone all"))
 end
 
 if msg == ".shutdown" then
-game:GetService'Players':Chat(("reset all"))
-game:GetService'Players':Chat(("blind others"))
 game:GetService'Players':Chat(("ff all"))
 game:GetService'Players':Chat(("speed others :)"))
 game:GetService'Players':Chat(("m Shutting Down..."))
+wait(1.5)
 game:GetService'Players':Chat(("jump others"))
-wait(1.50)
+wait(0.5)
 game:GetService'Players':Chat(("size all 0.3"))
 game:GetService'Players':Chat(("size all 0.3"))
 game:GetService'Players':Chat(("size all 0.3"))
